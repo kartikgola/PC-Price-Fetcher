@@ -1,0 +1,1 @@
+const connection = new require('./connect').Connection();
