@@ -17,6 +17,7 @@
         "linebreak-style": "off",
         "comma-dangle": "off",
         "indent": ["warn", 4],
-        "require-jsdoc": "off"
+        "require-jsdoc": "off",
+        "max-len": ["warn", 100]
     }
 }
