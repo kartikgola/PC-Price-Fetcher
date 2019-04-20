@@ -1,6 +1,6 @@
 const {DB_URL, DB_PASS, DB_USER, DB_NAME} = process.env;
 const mongoose = require('mongoose');
-const {Status} = require('./status');
+const {Status} = require('../status');
 
 const CONNECTION_KEY = Symbol.for('PC_PARTS_CONNECTION');
 const hasConnection = Object.getOwnPropertySymbols(global).indexOf(CONNECTION_KEY) >= 0;
