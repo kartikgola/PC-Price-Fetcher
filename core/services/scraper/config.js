@@ -8,8 +8,8 @@ module.exports = [
             name: 'h4',
             price: '.price-new',
             availability: '.label-stock.label',
-            url: '',
-            image: ''
+            url: 'h4 > a',
+            image: 'a > img'
         },
         params: {
             limit: 'number',
