@@ -1,4 +1,4 @@
-const connection = require('../connection/connect').Connection();
+const connection = require('../connection').Connection();
 const {PartSchema} = require('../schema');
 
 class Fetcher {
