@@ -5,7 +5,7 @@ class Fetcher {
     constructor() {
         this._db = null;
         this._partModel = null;
-        this._COLLECTION_NAME = 'part';
+        this._COLLECTION_NAME = 'parts';
     }
 
     getConnection() {
@@ -31,13 +31,30 @@ class Fetcher {
         return new Promise((resolve, reject) => {
             this.getConnection()
                 .then(() => {
-                    this.partModel.find({}, (err, parts) => {
+                    this.partModel.find({$text: {$search: keywords}}, (err, parts) => {
                         if ( err ) throw err;
                         resolve(parts);
                     });
                 })
                 .catch((err) => {
                     reject(err);
+                });
+        });
+    }
+
+    topN(n = 100) {
+        return new Promise((resolve, reject) => {
+            this.getConnection()
+                .then(() => {
+                    this.partModel.find({})
+                        .limit(n)
+                        .exec((err, parts) => {
+                            if ( err ) throw err;
+                            resolve(parts);
+                        });
+                })
+                .catch((err) => {
+
                 });
         });
     }

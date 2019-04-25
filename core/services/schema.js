@@ -6,9 +6,9 @@ const PartSchema = new Schema({
     price: Number,
     availability: Boolean,
     url: String,
-    seller: String,
+    sellerId: String,
     lastUpdated: Date,
-    tag: String,
+    tags: Array,
     description: String,
     imageUrl: String
 });
